@@ -9,10 +9,10 @@ on:
 jobs:
   build:
     name: Matrix Build Job
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [14, 16, 18]
-    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -36,3 +36,4 @@ jobs:
         with:
           name: build-6c9a8c9-v${{ matrix.node-version }}
           path: output-${{ matrix.node-version }}.txt
+
